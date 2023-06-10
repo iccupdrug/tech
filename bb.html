@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/png" sizes="32x32" rel="icon" href="img/icons8-маска-анонимуса-32.png">
+    <title>BB code</title>
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <meta property="og:title" content="Tech-Support">
+    <meta property="og:description" content="Tech-Support">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/">
+    
+	 <!-- Автор iCCup.Drug-->
+  
+   <style type="text/css">
+
+   .space2 {
+   background: #36393F;
+	border-width: 1 2 6 5px;
+	color: #DCDDDE;
+
+   }
+   h1 {
+   color: #FDF5E6;
+   }
+  </style>
+<style>
+	body {
+	background: #202225;
+	color: #F0EAD6;
+	 font-size: 1.3rem;
+	}
+	A {
+	color: #FDF5E6;
+	}
+</style>
+    <style>
+   button {
+    background: #B9BBBE; /* Синий цвет фона */
+    color: #000000; /* Белый цвет текста */
+    border: none; /* Убираем рамку */
+    padding: 1rem 1.5rem; /* Поля вокруг текста */
+    margin-bottom: 1rem; /* Отступ снизу */ 
+   }
+  </style>
+  <style>
+  textarea {
+  background:#000000;
+  color: #408C3C;
+  }
+   </style>
+<style>
+#vop {
+  background: #080808;
+  font-size: 1.6rem;
+}
+</style>
+ <style>
+  hr {
+    border: none; /* Убираем границу */
+    background-color: #202225; /* Цвет линии */
+    color: #202225; /* Цвет линии для IE6-7 */
+    height: 2px; /* Толщина линии */
+   }
+ </style>
+  <style>
+  #kras {
+  color: red;
+  }
+  #sin {
+    color: blue;
+  }
+  #zel {
+  color: green;
+  }
+  </style>
+ </head>
+ <p style="text-align: center;"><strong><a href="index.html">Tech supp</a></strong></p>
+  <body>
+ 
+
+ 
+    <header>
+	
+ 
+        <section>
+	
+	
+          <h2><mark>BB code</mark></h2>
+		  <p>
+		  <div class="space2"> <br><h1>Спойлер</h1></br>
+		 
+         
+<textarea  cols="60" rows="10" type="text" id="myInput">
+[spoiler=название спойлера] Содержимое спойлера[/spoiler]</textarea>
+
+<button onclick="myFunction1()">Скопировать код</button>
+<script>
+function myFunction1() {
+ 
+  var copyText = document.getElementById("myInput");
+
+
+  copyText.select();
+
+  
+  document.execCommand("copy");
+
+  alert("Будетс скопирован ответ: " + copyText.value);
+}
+</script>
+ <div class="space2">
+<br><h1">Центр</h1></br>
+
+
+<textarea  cols="60" rows="10" type="text" id="myInput4">[center]текст[/center] </textarea>
+
+<button onclick="myFunction4()">Скопировать код</button>
+
+
+
+
+<script>function myFunction4() {
+
+  var copyText = document.getElementById("myInput4");
+
+  copyText.select();
+
+  document.execCommand("copy");
+
+  
+  alert("Будетс скопирован ответ: " + copyText.value);
+}
+</script>
+ </div>
+</div>
+<p>
+<div class="space2"><h1 align="center">Цвет</h1>
+
+<br><h1 id="kras">Красный цвет</h1></br>
+
+<textarea  cols="60" rows="10" type="text" id="myInput2"> [color=red]Красный текст[/color]</textarea>
+
+<button onclick="myFunction2()">Скопировать код</button>
+<script>function myFunction2() {
+
+  var copyText = document.getElementById("myInput2");
+
+  copyText.select();
+
+  document.execCommand("copy");
+
+  
+  alert("Будетс скопирован ответ: " + copyText.value);
+}
+</script>
+</div>
+ <div class="space2">
+ <p>
+<br><h1 id="sin">Синий цвет</h1></br>
+
+<textarea  cols="60" rows="10" type="text" id="myInput3">[color=blue]Синий текст[/color]</textarea>
+
+<button onclick="myFunction3()">Скопировать код</button>
+
+
+
+
+<script>function myFunction3() {
+
+  var copyText = document.getElementById("myInput3");
+
+  copyText.select();
+
+  document.execCommand("copy");
+
+  
+  alert("Будетс скопирован ответ: " + copyText.value);
+}
+</script>
+ </div>
+ <div class="space2">
+<br><h1 id="zel">Зелёный цвет</h1></br>
+
+
+<textarea  cols="60" rows="10" type="text" id="myInput4">[color=green]Зелёный текст[/color] </textarea>
+
+<button onclick="myFunction4()">Скопировать код</button>
+
+
+
+
+<script>function myFunction4() {
+
+  var copyText = document.getElementById("myInput4");
+
+  copyText.select();
+
+  document.execCommand("copy");
+
+  
+  alert("Будетс скопирован ответ: " + copyText.value);
+}
+</script>
+ </div>
+ 
+
+  </div>
+  
+  </body>
+  
+</html>

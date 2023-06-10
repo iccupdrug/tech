@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <a id="myLink" href="#">Изменяемый текст ссылки</a>
+  <br><br>
+  <textarea id="linkTextarea">Изменяемый текст ссылки</textarea>
+  <br><br>
+  <button onclick="editLinkText()">Редактировать текст ссылки</button>
+
+  <script>
+    // Инициализация Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyC-PQIyC6u3Js4EJZmJVdW0tapcLM2FXzU",
+      authDomain: "iccuptech.firebaseapp.com",
+      databaseURL: "https://iccuptech-default-rtdb.firebaseio.com",
+      projectId: "iccuptech",
+      storageBucket: "iccuptech.appspot.com",
+      messagingSenderId: "704214415296",
+      appId: "1:704214415296:web:955547bc8153fe92287a25"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    // Получите доступ к базе данных Firestore
+    var db = firebase.firestore();
+
+    // Функция для редактирования текста ссылки
+    function editLinkText() {
+      var link = document.getElementById("myLink");
+      var newText = document.getElementById("linkTextarea").value;
+
+      if (newText) {
+        link.innerHTML = newText;
+        updateLinkTextInFirestore(newText);
+      }
+    }
+
+    // Функция для обновления текста ссылки в базе данных Firestore
+    function updateLinkTextInFirestore(newText) {
+      var linkDocRef = db.collection("links").doc("YOUR_DOCUMENT_ID");
+
+      linkDocRef.update({
+        linkText: newText
+      })
+      .then(function() {
+        console.log("Текст ссылки успешно обновлен в базе данных Firestore!");
+      })
+      .catch(function(error) {
+        console.error("Ошибка при обновлении текста ссылки в базе данных Firestore: ", error);
+      });
+    }
+
+    // Получение данных из базы данных Firestore и установка начального значения ссылки
+    var linkDocRef = db.collection("links").doc("YOUR_DOCUMENT_ID");
+
+    linkDocRef.get().then(function(doc) {
+      if (doc.exists) {
+        var linkText = doc.data().linkText;
+        var linkTextarea = document.getElementById("linkTextarea");
+
+        linkTextarea.value = linkText;
+        document.getElementById("myLink").innerHTML = linkText;
+
+        console.log("Текст ссылки получен из базы данных Firestore: ", linkText);
+      } else {
+        console.log("Документ не найден в базе данных Firestore!");
+      }
+    }).catch(function(error) {
+      console.log("Ошибка при получении документа из базы данных Firestore: ", error);
+    });
+  </script>
+</body>
+</html>
